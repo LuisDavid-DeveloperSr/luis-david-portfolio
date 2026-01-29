@@ -1,0 +1,170 @@
+/* ===== PORTAFOLIO ===== */
+
+.portfolio-inner {
+  width: 100%;
+}
+
+/* ===== HEADER ===== */
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.portfolio-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+-webkit-text-stroke: 0.1px white;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  display: inline-block;
+}
+
+.portfolio-header p {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.portfolio-line {
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 1.3rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+/* ===== GRID ===== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+/* ===== CARD ===== */
+.portfolio-card {
+  width: 100%;
+  max-width: 280px;
+  padding: 2.2rem 1.8rem;
+  border-radius: 22px;
+  text-align: left;
+  text-decoration: none;
+
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 40px rgba(255, 0, 85, 0.25);
+}
+
+/* ===== TEXTO ===== */
+.portfolio-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* ===== TECNOLOGÍAS ===== */
+.portfolio-tech {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.portfolio-tech li {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+}
+
+/* ===== CTA ===== */
+.portfolio-cta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--pink);
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-cta {
+  transform: translateX(4px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====== ANIMACIÓN DE ENTRADA TARJETAS ====== */
+
+.portfolio-card {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: portfolioFadeUp 0.6s ease forwards;
+}
+
+/* stagger suave */
+.portfolio-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.portfolio-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.portfolio-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.portfolio-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.portfolio-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.portfolio-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes portfolioFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

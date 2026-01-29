@@ -1,0 +1,224 @@
+/* ====== VARIABLES ====== */
+:root {
+  --pink: #ff0055;
+  --purple: #a855f7;
+  --bg-glass: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.18);
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.75);
+}
+
+/* ====== SECCIÓN GENERAL ====== */
+.about {
+  min-height: 100vh;
+  padding: 6rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+/* ⚠️ OJO:
+   .about-inner YA NO define tamaño ni glass
+   eso lo hace .glass-container (global)
+*/
+.about-inner {
+  width: 100%;
+}
+
+/* ====== HEADER ====== */
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  -webkit-text-stroke: 0.1px white;
+}
+
+.about-line {
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 1rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+/* ====== CONTENIDO SUPERIOR ====== */
+.about-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* TEXTO */
+.about-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* ====== BLOQUE DESTACADO ====== */
+.about-highlight {
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 85, 0.15),
+    rgba(168, 85, 247, 0.15)
+  );
+
+  border: 1px solid var(--border-glass);
+}
+
+.developer-icon {
+  margin-bottom: 1.5rem;
+}
+
+.about-highlight h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.about-highlight p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* ====== TARJETAS ====== */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.about-card {
+  padding: 2rem;
+  border-radius: 18px;
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(12px);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ====== ICONOS (MISMA ANIMACIÓN QUE HABILIDADES) ====== */
+.about-icon {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  color: var(--pink);
+  transition: transform 0.4s ease;
+}
+
+.about-card:hover .about-icon {
+  transform: scale(1.15) rotate(-8deg);
+  animation: floatIcon 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes floatIcon {
+  from {
+    transform: translateY(0) scale(1.15) rotate(-6deg);
+  }
+  to {
+    transform: translateY(-6px) scale(1.2) rotate(6deg);
+  }
+}
+
+.about-card h3 {
+  color: var(--text-main);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-header h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* ====== SVG ROTANDO ====== */
+.rotate-ring {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: spin 25s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ====== ANIMACIÓN DE ENTRADA TARJETAS ====== */
+
+.about-card {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: cardFadeUp 0.6s ease forwards;
+}
+
+/* stagger suave */
+.about-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.about-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.about-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.about-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

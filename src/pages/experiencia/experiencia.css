@@ -1,0 +1,169 @@
+/* ===== EXPERIENCIA ===== */
+
+.experience-inner {
+  width: 100%;
+}
+
+/* ===== HEADER ===== */
+.experience-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.experience-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+-webkit-text-stroke: 0.1px white;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  display: inline-block;
+}
+
+.experience-header p {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.experience-line {
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 1.3rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+/* ===== TIMELINE ===== */
+.experience-timeline {
+  position: relative;
+  margin-top: 3rem;
+  padding-left: 1.5rem;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(var(--pink), var(--purple));
+  opacity: 0.4;
+}
+
+/* ===== ITEM ===== */
+.experience-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+/* ===== CARD ===== */
+.experience-content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 1.8rem 2rem 1.8rem 2.6rem;
+  backdrop-filter: blur(12px);
+
+  /* animación entrada */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* delay por item */
+.experience-item:nth-child(1) .experience-content {
+  animation-delay: 0.15s;
+}
+.experience-item:nth-child(2) .experience-content {
+  animation-delay: 0.3s;
+}
+
+/* ===== PUNTO INTEGRADO ===== */
+.experience-content::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 26px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  box-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+}
+
+/* ===== HOVER ===== */
+.experience-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== TEXTO ===== */
+.experience-date {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--pink);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.experience-content h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.experience-content h4 {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+/* ===== LISTA ===== */
+.experience-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-content li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding: 4px 0;
+  line-height: 1.6;
+}
+
+.experience-content li::before {
+  content: "•";
+  color: var(--pink);
+  margin-right: 6px;
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .experience-timeline {
+    padding-left: 1rem;
+  }
+
+  .experience-content {
+    padding: 1.5rem 1.8rem 1.5rem 2.4rem;
+  }
+
+  .experience-header h1 {
+    font-size: 2.4rem;
+  }
+}

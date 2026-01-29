@@ -1,0 +1,152 @@
+/* ===== CONTACTO ===== */
+
+.contact-inner {
+  width: 100%;
+}
+
+/* ===== HEADER ===== */
+.contact-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+-webkit-text-stroke: 0.1px white;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  display: inline-block;
+}
+
+.contact-header p {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.contact-line {
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 1.3rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+/* ===== CARDS ===== */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.contact-card {
+  padding: 2.4rem 2rem;
+  border-radius: 22px;
+  text-align: center;
+  text-decoration: none;
+
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+
+  color: var(--text-main);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 40px rgba(255, 0, 85, 0.25);
+}
+
+/* ===== ICONOS ===== */
+.contact-icon {
+  font-size: 2.2rem;
+  color: var(--pink);
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.15) rotate(-8deg);
+  animation: floatIcon 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes floatIcon {
+  from {
+    transform: translateY(0) scale(1.15) rotate(-6deg);
+  }
+  to {
+    transform: translateY(-6px) scale(1.2) rotate(6deg);
+  }
+}
+/* ===== TEXTO ===== */
+.contact-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact-card span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ===== FOOTER ===== */
+.contact-footer {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.contact-footer strong {
+  color: var(--text-main);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-header h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* ====== ANIMACIÓN DE ENTRADA TARJETAS CONTACTO ====== */
+
+.contact-card {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: contactFadeUp 0.6s ease forwards;
+}
+
+/* stagger suave */
+.contact-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.contact-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.contact-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes contactFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,151 @@
+/* ===== EDUCACIÓN ===== */
+
+.education-inner {
+  width: 100%;
+}
+
+/* ===== HEADER ===== */
+.education-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.education-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+-webkit-text-stroke: 0.1px white;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  display: inline-block;
+}
+
+.education-header p {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.education-line {
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 1.3rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+/* ===== TIMELINE ===== */
+.education-timeline {
+  position: relative;
+  margin-top: 3rem;
+  padding-left: 1.5rem;
+}
+
+.education-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(var(--pink), var(--purple));
+  opacity: 0.4;
+}
+
+/* ===== ITEM ===== */
+.education-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+/* ===== CARD ===== */
+.education-content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 1.8rem 2rem 1.8rem 2.6rem;
+  backdrop-filter: blur(12px);
+
+  /* ✨ animación base */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.education-item:nth-child(1) .education-content {
+  animation-delay: 0.1s;
+}
+
+.education-item:nth-child(2) .education-content {
+  animation-delay: 0.25s;
+}
+
+/* ===== PUNTO INTEGRADO ===== */
+.education-content::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 26px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  box-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+}
+
+/* ===== HOVER ===== */
+.education-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== TEXTO ===== */
+.education-date {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--pink);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.education-content h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.education-content h4 {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.education-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .education-timeline {
+    padding-left: 1rem;
+  }
+
+  .education-content {
+    padding: 1.5rem 1.8rem 1.5rem 2.4rem;
+  }
+}
