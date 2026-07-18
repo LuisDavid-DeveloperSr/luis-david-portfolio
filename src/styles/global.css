@@ -327,6 +327,7 @@ body {
   /* ===== Scroll seguro ===== */
   html,
   body {
+    background-image:url("/hero-movil.png");
     overflow-x: hidden;
     overflow-y: auto;
   }
