@@ -1,7 +1,16 @@
 import "./portafolio.css";
 
 const proyectos = [
-    {
+  {
+    slug: "arimcrea-identidad-visual",
+    title: "Arimcrea",
+    description:
+      "Sitio Web sobre diseño e identidad de marca para Arimcrea",
+    tech: ["UI/UX", "Vercel / Hosting", "HTTP / HTTPS/UX"],
+    demoUrl: "https://arimcrea.vercel.app", 
+    repoUrl: NULL
+  },
+  {
     slug: "estadisticas-laborales",
     title: "Dashboard de Estadísticas Laborales (Eurostat)",
     description:
@@ -10,7 +19,7 @@ const proyectos = [
     demoUrl: "https://labor-stats-frontend.vercel.app/",
     repoUrl: "https://github.com/LuisDavid-DeveloperSr/labor-stats-frontend",
   },
-    {
+  {
     slug: "analisis-rendimiento",
     title: "Dashboard de Rendimiento Universitario",
     description:
@@ -19,16 +28,7 @@ const proyectos = [
     demoUrl: "https://university-performance-analysis-v4yyylcpfginmumyk6ic2a.streamlit.app/",
     repoUrl: "https://github.com/LuisDavid-DeveloperSr/university-performance-analysis.git",
   },
- {
-  slug: "gestion-usuarios-auth",
-  title: "Gestión de Usuarios con Autenticación",
-  description:
-    "Backend en Node.js para registro y autenticación de usuarios, con JWT, encriptación de contraseñas y persistencia en MySQL.",
-  tech: ["Node.js", "MySQL", "Backend" ],
-  demoUrl: null,
-  repoUrl: "https://github.com/LuisDavid-DeveloperSr/api-gestion-usuarios"
-}
-,
+
 ];
 
 export default function Portafolio() {
