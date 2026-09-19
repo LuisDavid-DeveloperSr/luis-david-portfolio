@@ -8,7 +8,7 @@ const proyectos = [
       "Sitio Web sobre diseño e identidad de marca para Arimcrea",
     tech: ["UI/UX", "Vercel / Hosting", "HTTP / HTTPS/UX"],
     demoUrl: "https://arimcrea.vercel.app", 
-    repoUrl: NULL
+    repoUrl: "https://github.com/LuisDavid-DeveloperSr/labor-stats-frontend",
   },
   {
     slug: "estadisticas-laborales",
